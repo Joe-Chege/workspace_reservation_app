@@ -47,4 +47,4 @@ The Workspace Reservation App is licensed under the MIT License, empowering you 
 
 ## **Experience Seamless Workspace Management Today!**
 
-This README offers a comprehensive guide to unlock the full potential of the Workspace Reservation App. For detailed installation instructions and usage guidelines, please refer to the [official documentation](#). Should you need any assistance or have questions, don't hesitate to reach out. Welcome to a new era of workspace efficiency and convenience!
+This README offers a comprehensive guide to unlock the full potential of the Workspace Reservation App. For detailed installation instructions and usage guidelines. Should you need any assistance or have questions, don't hesitate to reach out. Welcome to a new era of workspace efficiency and convenience!
