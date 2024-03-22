@@ -1,23 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Details</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Resource Details</h1>
-        <!-- Your HTML content for displaying resource details goes here -->
-    </div>
+{% extends 'base.html' %}
 
-    <!-- Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+{% block header %}
+    <h1>{% block title %}{{ resource.name }}{% endblock %}</h1>
+{% if g.user.role == 'admin' %}
+    <a href="{{ url_for('resources.update', id=resource.id) }}"><h6>Edit</h6></a>
+{% endif %}
+
+{% endblock %}
+
+
+{% block content %}
+  <h4 class="d-flex justify-content-center">Resource Description</h4>
+  <div class="d-flex justify-content-center">
+    <p style="white-space: pre-wrap;">{{ resource['description'] }}</p>
+  </div>
+    <hr>
+  <div>
+    <h4 class="d-flex justify-content-center">Images Below (TODO)</h4>
+    <!-- images will dynamically be pulled to have a scrollable banner here -->
+  </div>
+  <hr>
+{% endblock %}

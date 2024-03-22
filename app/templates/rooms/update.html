@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+{% from "_formhelpers.html" import render_field %}
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Room - Workspace Reservation App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block header %}
+<h1 xmlns="http://www.w3.org/1999/html">{% block title %}Update Room{% endblock %}</h1>
+{% endblock %}
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Workspace Reservation App</a>
-            <!-- Add any additional navigation items if needed -->
-        </div>
-    </nav>
+{% block content %}
+  <form method="POST" action="{{ url_for('rooms.update', id=room['id']) }}">
+      {{ form.csrf_token }}
+      {{ render_field(form.name) }}
+      {{ render_field(form.description) }}
 
-    <div class="container mt-5">
-        <h1>Update Room</h1>
-        <!-- Add form or content for updating a room -->
-    </div>
+      {{ render_field(form.resources) }}
 
-    <!-- Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+      <input type="submit" value="Update">
+  </form>
 
-</html>
+    <form action="{{ url_for('rooms.delete', id=room['id']) }}" method="post">
+      <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this room?')">
+    </form>
+
+{% endblock %}

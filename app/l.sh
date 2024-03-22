@@ -1,14 +1,24 @@
 #!/bin/bash
 
-# Loop through the modified files
-for file in $(git status | grep "modified:" | awk '{print $NF}')
-do
-    # Add the file to the staging area
-    git add "$file"
-    
-    # Commit the file with a descriptive message
-    git commit -m "Update $file"
-done
+# Add and commit individual changes
 
-# Display status after committing all files
-git status
+# Add and commit changes to app.db
+git add app.db
+git commit -m "Update app.db"
+
+# Add and commit changes to app/__init__.py
+git add app/__init__.py
+git commit -m "Update app/__init__.py"
+
+# Add and commit changes to app/bookings/__init__.py
+git add app/bookings/__init__.py
+git commit -m "Update app/bookings/__init__.py"
+
+# Add and commit changes to app/bookings/routes.py
+git add app/bookings/routes.py
+git commit -m "Update app/bookings/routes.py"
+
+# Repeat the above process for each file that needs to be committed individually
+
+# After adding and committing all individual changes, push the changes to the remote repository if needed
+git push origin main

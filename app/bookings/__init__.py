@@ -1,5 +1,5 @@
 from flask import Blueprint
 
-bookings = Blueprint('bookings', __name__)
+bp = Blueprint('bookings', __name__)
 
-from . import routes
+from app.bookings import routes

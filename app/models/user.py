@@ -1,9 +1,17 @@
 from app.extensions import db
-from flask_login import UserMixin
+import datetime
 
-class User(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(64), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
-    # Add more fields as needed
+
+class User(db.Model):
+    __tablename__ = "users"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.Text, nullable=False)
+    firstname = db.Column(db.String(150), nullable=False)
+    lastname = db.Column(db.String(150), nullable=False)
+    created = db.Column(db.DateTime, default=datetime.datetime.now(), nullable=False)
+    role = db.Column(db.String(150), default='user', nullable=False)
+
+    def __repr__(self):
+        return f'<User "{self.firstname} {self.lastname}">'

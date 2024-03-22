@@ -1,6 +1,6 @@
-# app/main/__init__.py
 from flask import Blueprint
 
-main = Blueprint('main', __name__)
+bp = Blueprint('main', __name__)
 
-from . import routes
+from app.main import routes
+

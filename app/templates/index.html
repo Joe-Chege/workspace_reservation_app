@@ -1,16 +1,9 @@
-<!-- templates/index.html -->
-
-{% extends "base.html" %}
-
-{% block title %}Home - Workspace Reservation App{% endblock %}
+{% extends 'base.html' %}
 
 {% block content %}
-    <div class="jumbotron">
-        <h1 class="display-4">Welcome to Workspace Reservation App!</h1>
-        <p class="lead">Reserve workspaces hassle-free with our intuitive application.</p>
-        <hr class="my-4">
-        <p>Get started by signing up or logging in.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a>
-        <a class="btn btn-outline-primary btn-lg" href="#" role="button">Log In</a>
+    <span class="title"><h1>{% block title %}Home{% endblock %}</h1></span>
+    <div class="content">
+        <h2>This is the main Flask blueprint</h2>
     </div>
 {% endblock %}
+
