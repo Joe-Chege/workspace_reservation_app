@@ -1,52 +1,59 @@
-## **Welcome to the Workspace Reservation App!**
+# Workspace Reservation App
 
-Thank you for considering the Workspace Reservation App, your ultimate solution for seamless workspace management. Whether you're organizing spaces in an office, coworking facility, or any shared environment, our app offers intuitive features to simplify reservation processes and enhance productivity.
+This is a Flask-based web application for reserving workspaces. It uses SQLAlchemy for database operations, Flask-Admin for administrative interfaces, and Flask-BasicAuth for authentication.
 
-### **Features That Empower**
+## Getting Started
 
-- **Effortless User Management:** Seamlessly register, login, and logout with user-friendly authentication features.
-- **Booking Made Simple:** Create, view, and manage workspace bookings effortlessly, ensuring optimal space utilization.
-- **Workspace Details at Your Fingertips:** Access comprehensive workspace information and manage details hassle-free.
-- **Admin Superpowers:** Empower administrators with a dynamic dashboard to oversee users, workspaces, and bookings effectively.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### **Simple Setup, Seamless Integration**
+### Prerequisites
 
-Getting started with the Workspace Reservation App is a breeze:
+- Python 3.6+
+- pip
+- Virtualenv
 
-1. **Clone the Repository:** Obtain the app's codebase swiftly using Git.
-2. **Navigate and Install:** Dive into the project directory and install dependencies effortlessly.
-3. **Configure with Ease:** Customize your app environment effortlessly with simple configuration steps.
-4. **Launch and Explore:** Fire up the application and witness its magic at [http://localhost:5000](http://localhost:5000).
+### Installation
 
-### **Effortless Usage, Maximum Efficiency**
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/workspace_reservation_app.git
+    ```
+2. Create a virtual environment and activate it:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+3. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Set the FLASK_APP environment variable:
+    ```bash
+    export FLASK_APP=app
+    ```
+5. Run the application:
+    ```bash
+    flask run
+    ```
+6. Alternatively, you can use Gunicorn to run the application:
+    ```bash
+    gunicorn 'app:create_app()'
+    ```
 
-Unlock the full potential of the Workspace Reservation App with these simple steps:
+## Usage
 
-1. **User Registration:** Join the workspace community by registering with your credentials.
-2. **User Login:** Access your account securely with straightforward login steps.
-3. **Creating Bookings:** Reserve your preferred workspace effortlessly with our intuitive booking process.
-4. **Viewing Bookings:** Keep track of your reservations seamlessly with a quick glance.
-5. **Admin Dashboard:** Admins enjoy unparalleled control and oversight with our dynamic dashboard.
+Once the server is running, navigate to `http://localhost:5000` in your web browser. You can start reserving workspaces by creating an account and logging in.
 
-### **Tailored Configuration, Endless Possibilities**
+## Configuration
 
-Customize the Workspace Reservation App to suit your unique requirements:
+The application's configuration is located in `config.py`. You can modify this file to change the application's settings.
 
-- **Configurable Settings:** Fine-tune application behavior using the `config.py` file with ease.
+In the `create_app` function in `__init__.py`, the application is configured to use basic authentication with the username and password both set to 'admin'. You can change these values to something more secure.
 
-### **Join the Community, Make a Difference**
+## Contributing
 
-Contributions to the Workspace Reservation App are more than welcome:
+Please read `CONTRIBUTING.md` for details on our code of conduct, and the process for submitting pull requests to us.
 
-- **Open Collaboration:** Join our community of contributors and help shape the future of workspace management.
-- **Feedback and Support:** Share your insights, report issues, or suggest improvements through GitHub.
+## License
 
-### **Open-Source, Endless Freedom**
-
-The Workspace Reservation App is licensed under the MIT License, empowering you with the freedom to innovate and collaborate without boundaries.
-
-## **Experience Seamless Workspace Management Today!**
-
-Explore the live Workspace Reservation App [here](https://workspace-reservation-app-1.onrender.com/)!
-
-This README offers a comprehensive guide to unlock the full potential of the Workspace Reservation App. For detailed installation instructions and usage guidelines. Should you need any assistance or have questions, don't hesitate to reach out. Welcome to a new era of workspace efficiency and convenience!
+This project is licensed under the MIT License - see the `LICENSE.md` file for details.
